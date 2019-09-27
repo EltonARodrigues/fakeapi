@@ -4,42 +4,44 @@ from flask_restful import Api, Resource, reqparse
 app = Flask(__name__)
 api = Api(app)
 
+id = 20
+'''
 messages = [
+    {
+        "id": 0,
+        "from": "5514981007074",
+        "to": "stet",
+        "type": "text",
+        "text": "PRIMEIRA",
+        "caption": "",
+        "mime": "",
+        "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/test.ogg",
+        "media_id": ""
+    },
     {
         "id": 1,
         "from": "5514981007074",
         "to": "stet",
+        "type": "audio",
+        "text": "",
+        "caption": "",
+        "mime": "",
+        "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/test.ogg",
+        "media_id": ""
+    },
+    {
+        "id": 2,
+        "from": "5514981007074",
+        "to": "stet",
         "type": "text",
-        "text": "teste 1",
+        "text": "texto texto texto texto 1",
         "caption": "",
         "mime": "",
         "file": "",
         "media_id": ""
     },
     {
-        "id": 2,
-        "from": "6666666666666",
-        "to": "stet",
-        "type": "text",
-        "text": "teste 1",
-        "caption": "",
-        "mime": "",
-        "file": "",
-        "media_id": ""
-    },
-        {
         "id": 3,
-        "from": "6666666666666",
-        "to": "stet",
-        "type": "text",
-        "text": "teste 2",
-        "caption": "",
-        "mime": "",
-        "file": "",
-        "media_id": ""
-    },
-        {
-        "id": 4,
         "from": "5514981007074",
         "to": "stet",
         "type": "text",
@@ -49,9 +51,9 @@ messages = [
         "file": "",
         "media_id": ""
     },
-        {
-        "id": 5,
-        "from": "6666666666666",
+    {
+        "id": 4,
+        "from": "5514981007074",
         "to": "stet",
         "type": "text",
         "text": "teste 3",
@@ -61,8 +63,19 @@ messages = [
         "media_id": ""
     },
         {
-        "id": 6,
-        "from": "6666666666666",
+        "id": 5,
+        "from": "5514981007074",
+        "to": "stet",
+        "type": "audio",
+        "text": "teste 4",
+        "caption": "",
+        "mime": "",
+        "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/test.ogg",
+        "media_id": ""
+    },
+        {
+        "id": 7,
+        "from": "5514981007074",
         "to": "stet",
         "type": "text",
         "text": "teste 4",
@@ -72,8 +85,8 @@ messages = [
         "media_id": ""
     },
         {
-        "id": 7,
-        "from": "6666666666666",
+        "id": 8,
+        "from": "5514981007074",
         "to": "stet",
         "type": "text",
         "text": "teste 5",
@@ -83,8 +96,8 @@ messages = [
         "media_id": ""
     },
         {
-        "id": 8,
-        "from": "6666666666666",
+        "id": 9,
+        "from": "5514981007074",
         "to": "stet",
         "type": "text",
         "text": "teste 6",
@@ -92,32 +105,191 @@ messages = [
         "mime": "",
         "file": "",
         "media_id": ""
+    },
+       {
+        "id": 10,
+        "from": "5514981007074",
+        "to": "stet",
+        "type": "text",
+        "text": "teste 7",
+        "caption": "",
+        "mime": "",
+        "file": "",
+        "media_id": ""
+    },
+        {
+        "id": 11,
+        "from": "5514981007074",
+        "to": "stet",
+        "type": "audio",
+        "text": "teste 8",
+        "caption": "",
+        "mime": "",
+        "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/test.ogg",
+        "media_id": ""
+    },
+            {
+        "id": 11,
+        "from": "5514981007074",
+        "to": "stet",
+        "type": "audio",
+        "text": "FIM",
+        "caption": "",
+        "mime": "",
+        "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/test.ogg",
+        "media_id": ""
+    },
+       {
+        "id": 15,
+        "from": "6666666666666",
+        "to": "stet",
+        "type": "text",
+        "text": "INICIO",
+        "caption": "",
+        "mime": "",
+        "file": "",
+        "media_id": ""
+    },
+        {
+        "id": 12,
+        "from": "6666666666666",
+        "to": "stet",
+        "type": "text",
+        "text": "test 1",
+        "caption": "",
+        "mime": "",
+        "file": "",
+        "media_id": ""
+    },
+        {
+        "id": 13,
+        "from": "6666666666666",
+        "to": "stet",
+        "type": "text",
+        "text": "teste 2",
+        "caption": "",
+        "mime": "",
+        "file": "",
+        "media_id": ""
+    },
+        {
+        "id": 14,
+        "from": "6666666666666",
+        "to": "stet",
+        "type": "text",
+        "text": "ULTIMA",
+        "caption": "",
+        "mime": "",
+        "file": "",
+        "media_id": ""
+    },
+    {
+        "id": 13,
+        "from": "5514981007074",
+        "to": "stet",
+        "type": "audio",
+        "text": "",
+        "caption": "",
+        "mime": "",
+        "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/audio3.ogg",
+        "media_id": ""
+    },
+    {
+        "id": 13,
+        "from": "5514981007074",
+        "to": "stet",
+        "type": "audio",
+        "text": "",
+        "caption": "",
+        "mime": "",
+        "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/audio2.ogg",
+        "media_id": ""
+    },
+        {
+        "id": 14,
+        "from": "5514981007074",
+        "to": "stet",
+        "type": "audio",
+        "text": "",
+        "caption": "",
+        "mime": "",
+        "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/audio1.ogg",
+        "media_id": ""
+    },
+
+        {
+        "id": 14,
+        "from": "5514981007074",
+        "to": "stet",
+        "type": "text",
+        "text": "Texto normal sem ser uma transcrição de audio",
+        "caption": "",
+        "mime": "",
+        "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/audio4.ogg",
+        "media_id": ""
+    },
+        {
+        "id": 14,
+        "from": "5514981007074",
+        "to": "stet",
+        "type": "audio",
+        "text": "",
+        "caption": "",
+        "mime": "",
+        "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/audio4.ogg",
+        "media_id": ""
     }
 ]
+'''
 
+messages = {'messages': [
+    
+    {
+        "id": 14,
+        "from": "6666666666666",
+        "to": "stet",
+        "type": "text",
+        "text": "ULTIMA",
+        "caption": "",
+        "mime": "",
+        "file": "",
+        "media_id": ""
+    },
+    {
+        "id": 14,
+        "from": "5514981007074",
+        "to": "stet",
+        "type": "text",
+        "text": "ULTIMA",
+        "caption": "",
+        "mime": "",
+        "file": "",
+        "media_id": ""
+    }
+]}
 
 class Message(Resource):
     def get(self, number):
-        response = []
+        response = {'messages': [] }
         if number != 'all':
-            for message in messages:
+            for message in messages['messages']:
                 if(number == message["from"]):
-                    response.append(message)
+                    response['messages'].append(message)
+                    print(response)
             return response, 200
         return messages, 200
 
     def post(self, number):
+        global id
         parser = reqparse.RequestParser()
         parser.add_argument("from")
         parser.add_argument("to")
         parser.add_argument("message")
         args = parser.parse_args()
 
-        for message in messages:
-            if(number    == message["id"]):
-                return "User with name {} already exists".format(name), 400
+        id += 1
         message = {
-            "id": int(number),
+            "id": id,
             "from": args['from'],
             "to": args['to'],
             "type": "text",
@@ -127,12 +299,13 @@ class Message(Resource):
             "file": "",
             "media_id": ""
         }
-        messages.append(message)
+
+        messages['messages'].append(message)
         return message, 201
 
     def delete(self, number):
         global messages
-        messages = [message for message in messages if message["id"] != int(number)]
+        messages = [message for message in messages['messages'] if message["id"] != int(number)]
         print(messages)
         return "{} is deleted.".format(number), 200
 
