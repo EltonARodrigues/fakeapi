@@ -1,17 +1,17 @@
-from flask import Flask
 from flask_restful import Api, Resource, reqparse
-
+from flask import Flask
+import os
 app = Flask(__name__)
 api = Api(app)
 
 id = 20
-'''
+
 messages = [
     {
         "id": 0,
         "from": "5514981007074",
         "to": "stet",
-        "type": "text",
+        "type": "audio",
         "text": "PRIMEIRA",
         "caption": "",
         "mime": "",
@@ -240,33 +240,7 @@ messages = [
         "media_id": ""
     }
 ]
-'''
 
-messages = {'messages': [
-    
-    {
-        "id": 14,
-        "from": "6666666666666",
-        "to": "stet",
-        "type": "text",
-        "text": "ULTIMA",
-        "caption": "",
-        "mime": "",
-        "file": "",
-        "media_id": ""
-    },
-    {
-        "id": 14,
-        "from": "5514981007074",
-        "to": "stet",
-        "type": "text",
-        "text": "ULTIMA",
-        "caption": "",
-        "mime": "",
-        "file": "",
-        "media_id": ""
-    }
-]}
 
 class Message(Resource):
     def get(self, number):
@@ -275,7 +249,6 @@ class Message(Resource):
             for message in messages['messages']:
                 if(number == message["from"]):
                     response['messages'].append(message)
-                    print(response)
             return response, 200
         return messages, 200
 
@@ -289,7 +262,7 @@ class Message(Resource):
 
         id += 1
         message = {
-            "id": id,
+            "id": int(id),
             "from": args['from'],
             "to": args['to'],
             "type": "text",
@@ -299,16 +272,19 @@ class Message(Resource):
             "file": "",
             "media_id": ""
         }
-
         messages['messages'].append(message)
         return message, 201
 
     def delete(self, number):
         global messages
-        messages = [message for message in messages['messages'] if message["id"] != int(number)]
-        print(messages)
+        for i in range(len(messages['messages'])):
+            if messages['messages'][i]['id'] == int(number):
+                del messages['messages'][i]
+                break
+
         return "{} is deleted.".format(number), 200
 
 api.add_resource(Message, "/message/<string:number>")
 
-app.run(debug=True)
+port = int(os.environ.get("PORT", 5000))
+app.run(host='0.0.0.0', port=port)
