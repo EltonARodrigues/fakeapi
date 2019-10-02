@@ -193,7 +193,7 @@ messages = {
         "text": "",
         "caption": "",
         "mime": "",
-        "file": ""
+        "file": "",
         "media_id": ""
     }
 ]
