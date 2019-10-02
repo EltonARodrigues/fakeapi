@@ -5,22 +5,8 @@ import os
 app = Flask(__name__)
 api = Api(app)
 
-id = 20
-messages = {
-    'messages': [
-                {
-        "id": 14,
-        "from": "666666666666",
-        "to": "stet",
-        "type": "audio",
-        "text": "",
-        "caption": "",
-        "mime": "",
-        "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/audio4.ogg",
-        "media_id": ""
-    }
-    ]
-}
+id = 40
+
 messages = {
     'messages': [
         {
@@ -145,7 +131,7 @@ messages = {
         "media_id": ""
     },
             {
-        "id": 11,
+        "id": 12,
         "from": "5514981007074",
         "to": "stet",
         "type": "audio",
@@ -167,7 +153,7 @@ messages = {
         "media_id": ""
     },
         {
-        "id": 12,
+        "id": 16,
         "from": "6666666666666",
         "to": "stet",
         "type": "text",
@@ -178,7 +164,7 @@ messages = {
         "media_id": ""
     },
         {
-        "id": 13,
+        "id": 17,
         "from": "6666666666666",
         "to": "stet",
         "type": "text",
@@ -189,7 +175,7 @@ messages = {
         "media_id": ""
     },
         {
-        "id": 14,
+        "id": 18,
         "from": "6666666666666",
         "to": "stet",
         "type": "text",
@@ -200,7 +186,7 @@ messages = {
         "media_id": ""
     },
     {
-        "id": 13,
+        "id": 19,
         "from": "5514981007074",
         "to": "stet",
         "type": "audio",
@@ -211,7 +197,7 @@ messages = {
         "media_id": ""
     },
     {
-        "id": 13,
+        "id": 20,
         "from": "5514981007074",
         "to": "stet",
         "type": "audio",
@@ -222,7 +208,7 @@ messages = {
         "media_id": ""
     },
         {
-        "id": 14,
+        "id": 21,
         "from": "5514981007074",
         "to": "stet",
         "type": "audio",
@@ -234,7 +220,7 @@ messages = {
     },
 
         {
-        "id": 14,
+        "id": 22,
         "from": "5514981007074",
         "to": "stet",
         "type": "text",
@@ -245,7 +231,7 @@ messages = {
         "media_id": ""
     },
         {
-        "id": 14,
+        "id": 23,
         "from": "5514981007074",
         "to": "stet",
         "type": "audio",
