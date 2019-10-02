@@ -102,7 +102,7 @@ messages = {
         "from": "5514981007074",
         "to": "stet",
         "type": "audio",
-        "text": "teste 8",
+        "text": "",
         "caption": "",
         "mime": "",
         "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/test.ogg",
@@ -189,8 +189,8 @@ messages = {
         "id": 25,
         "from": "5514981007074",
         "to": "stet",
-        "type": "audio",
-        "text": "",
+        "type": "text",
+        "text": "Fim",
         "caption": "",
         "mime": "",
         "file": "",
@@ -200,16 +200,19 @@ messages = {
 }
 
 
-class Message(Resource):
+class GetMessage(Resource):
     def get(self, number):
         response = {'messages': [] }
-        if number != 'all':
-            for message in messages['messages']:
-                if(number == message["from"]):
-                    response['messages'].append(message)
-            return response, 200
+        for message in messages['messages']:
+            if(number == message["from"]):
+                response['messages'].append(message)
+        return response, 200
+
+class GetAllMessage(Resource):
+    def get(self):
         return messages, 200
 
+class PostMessage(Resource):
     def post(self, number):
         global id
         parser = reqparse.RequestParser()
@@ -233,6 +236,7 @@ class Message(Resource):
         messages['messages'].append(message)
         return message, 201
 
+class UpdateMessage(Resource):
     def delete(self, number):
         global messages
         for i in range(len(messages['messages'])):
@@ -242,7 +246,10 @@ class Message(Resource):
 
         return "{} is deleted.".format(number), 200
 
-api.add_resource(Message, "/message/<string:number>")
+api.add_resource(GetMessage, "/getMessages/5515991573894/<string:number>")
+api.add_resource(GetAllMessage, "/getMessages/5515991573894/")
+api.add_resource(UpdateMessage, "/updateMessage/<string:number>")
+api.add_resource(PostMessage, "/message/<string:number>")
 
 port = int(os.environ.get("PORT", 5000))
 app.run(host='0.0.0.0', port=port)
