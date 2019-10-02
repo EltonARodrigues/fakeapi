@@ -9,17 +9,6 @@ id = 40
 
 messages = {
     'messages': [
-        {
-        "id": 0,
-        "from": "5514981007074",
-        "to": "stet",
-        "type": "audio",
-        "text": "PRIMEIRA",
-        "caption": "",
-        "mime": "",
-        "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/test.ogg",
-        "media_id": ""
-    },
     {
         "id": 1,
         "from": "5514981007074",
@@ -62,17 +51,6 @@ messages = {
         "caption": "",
         "mime": "",
         "file": "",
-        "media_id": ""
-    },
-        {
-        "id": 5,
-        "from": "5514981007074",
-        "to": "stet",
-        "type": "audio",
-        "text": "teste 4",
-        "caption": "",
-        "mime": "",
-        "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/test.ogg",
         "media_id": ""
     },
         {
@@ -125,17 +103,6 @@ messages = {
         "to": "stet",
         "type": "audio",
         "text": "teste 8",
-        "caption": "",
-        "mime": "",
-        "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/test.ogg",
-        "media_id": ""
-    },
-            {
-        "id": 12,
-        "from": "5514981007074",
-        "to": "stet",
-        "type": "audio",
-        "text": "FIM",
         "caption": "",
         "mime": "",
         "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/test.ogg",
@@ -208,18 +175,6 @@ messages = {
         "media_id": ""
     },
         {
-        "id": 21,
-        "from": "5514981007074",
-        "to": "stet",
-        "type": "audio",
-        "text": "",
-        "caption": "",
-        "mime": "",
-        "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/audio1.ogg",
-        "media_id": ""
-    },
-
-        {
         "id": 22,
         "from": "5514981007074",
         "to": "stet",
@@ -230,15 +185,15 @@ messages = {
         "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/audio4.ogg",
         "media_id": ""
     },
-        {
-        "id": 23,
+    {
+        "id": 25,
         "from": "5514981007074",
         "to": "stet",
         "type": "audio",
         "text": "",
         "caption": "",
         "mime": "",
-        "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/audio4.ogg",
+        "file": ""
         "media_id": ""
     }
 ]
