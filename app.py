@@ -237,7 +237,7 @@ class PostMessage(Resource):
         return message, 201
 
 class UpdateMessage(Resource):
-    def delete(self, number):
+    def post(self, number):
         global messages
         for i in range(len(messages['messages'])):
             if messages['messages'][i]['id'] == int(number):
