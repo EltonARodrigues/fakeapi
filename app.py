@@ -1,13 +1,29 @@
 from flask_restful import Api, Resource, reqparse
 from flask import Flask
 import os
+
 app = Flask(__name__)
 api = Api(app)
 
 id = 20
-
-messages = [
-    {
+messages = {
+    'messages': [
+                {
+        "id": 14,
+        "from": "666666666666",
+        "to": "stet",
+        "type": "audio",
+        "text": "",
+        "caption": "",
+        "mime": "",
+        "file": "https://testpurecloudelton.s3.sa-east-1.amazonaws.com/audio4.ogg",
+        "media_id": ""
+    }
+    ]
+}
+messages = {
+    'messages': [
+        {
         "id": 0,
         "from": "5514981007074",
         "to": "stet",
@@ -240,6 +256,7 @@ messages = [
         "media_id": ""
     }
 ]
+}
 
 
 class Message(Resource):
